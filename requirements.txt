@@ -13,4 +13,5 @@ langchain-groq
 langgraph
 openai
 python-dotenv
+requests
 groq
