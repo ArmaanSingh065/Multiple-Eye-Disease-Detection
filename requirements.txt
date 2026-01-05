@@ -9,6 +9,7 @@ matplotlib
 
 langchain
 langchain-openai
+langchain-groq
 langgraph
 openai
 python-dotenv
