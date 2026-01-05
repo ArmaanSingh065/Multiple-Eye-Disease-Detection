@@ -1,11 +1,15 @@
 streamlit>=1.30.0
+
 tensorflow==2.20.0
 numpy
 pillow
 opencv-python-headless
+scikit-learn
+matplotlib
 
 langchain
-langchain-core
+langchain-openai
 langgraph
-groq
+openai
 python-dotenv
+groq
