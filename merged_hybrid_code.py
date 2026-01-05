@@ -19,7 +19,8 @@ import requests
 # TensorFlow Model Loading from Google Drive
 # -------------------------------
 MODEL_PATH = "Trained_Model.keras"  # Local file name
-MODEL_URL = "https://drive.google.com/uc?id=1L0XAM8jjpHO_bUoSlWBRLSEbZEgdcs0U"  # Direct download link
+GDRIVE_FILE_ID = "1L0XAM8jjpHO_bUoSlWBRLSEbZEgdcs0U"
+MODEL_URL = f"https://drive.google.com/uc?id={GDRIVE_FILE_ID}"  # Direct download link
 
 @st.cache_resource
 def load_model():
