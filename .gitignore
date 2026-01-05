@@ -1,0 +1,10 @@
+# Secrets
+.env
+
+# ML models
+*.h5
+*.keras
+
+# Python
+__pycache__/
+*.pyc
