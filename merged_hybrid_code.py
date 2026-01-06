@@ -1,4 +1,5 @@
 import streamlit as st
+import gdown
 import os
 os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
 import tensorflow as tf
@@ -24,18 +25,17 @@ MODEL_URL = f"https://drive.google.com/uc?id={GDRIVE_FILE_ID}"  # Direct downloa
 
 @st.cache_resource
 def load_model():
-    # Download model if not present
     if not os.path.exists(MODEL_PATH):
         st.write("Downloading model from Google Drive… this may take a moment.")
-        r = requests.get(MODEL_URL)
-        with open(MODEL_PATH, "wb") as f:
-            f.write(r.content)
+        gdown.download(
+            id=GDRIVE_FILE_ID,
+            output=MODEL_PATH,
+            quiet=False
+        )
         st.write("Model downloaded successfully.")
-    # Load model
     return tf.keras.models.load_model(MODEL_PATH)
 
 model = load_model()
-
 
 def model_prediction(test_image_path):
     img = tf.keras.utils.load_img(test_image_path, target_size=(224, 224))
