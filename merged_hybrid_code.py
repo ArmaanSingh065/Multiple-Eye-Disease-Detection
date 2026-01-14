@@ -1,8 +1,21 @@
 import streamlit as st
-st.markdown(
-    '<meta name="google-site-verification" content="d1XnPwb6gFVW-Ved2sdcYbx5XgyBj6yws1aWNvWjdE0" />',
-    unsafe_allow_html=True
+import streamlit.components.v1 as components
+
+# Google Analytics (GA4)
+components.html(
+    """
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5KWW2DW1YP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5KWW2DW1YP');
+    </script>
+    """,
+    height=0,
 )
+
 import gdown
 import os
 os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
