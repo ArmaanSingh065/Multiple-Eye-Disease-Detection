@@ -1,4 +1,8 @@
 import streamlit as st
+st.markdown(
+    '<meta name="google-site-verification" content="d1XnPwb6gFVW-Ved2sdcYbx5XgyBj6yws1aWNvWjdE0" />',
+    unsafe_allow_html=True
+)
 import gdown
 import os
 os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
